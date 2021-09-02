@@ -11,6 +11,7 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
+    "@rollup/plugin-replace": "^3.0.0",
     "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
@@ -28,6 +29,7 @@
   },
   "type": "module",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "fast-average-color": "^6.4.1",
     "memoize-one": "^5.2.1"
   }

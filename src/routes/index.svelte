@@ -69,7 +69,7 @@
   {:else}
     <div class='login-container'>
       <button class='login' on:click={login}>
-        <img class='login-logo' src='/static/SpotifyLogo.svg' alt='Spotify Logo'>
+        <img class='login-logo' src='/SpotifyLogo.svg' alt='Spotify Logo'>
         <div class='login-text'>
           Login with Spotify
         </div>
