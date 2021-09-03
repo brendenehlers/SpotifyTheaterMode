@@ -36,12 +36,14 @@
 	})
 
 	const loadDataIntoVairables = (data) => {
+		console.log(data)
 		currAlbumCover = data.item.album.images[0].url
 		currSongTitle = data.item.name
 		currArtist = data.item.artists?.map(a => a.name) || []
 
 		currSongTime = data.progress_ms
 		currSongDuration = data.item.duration_ms
+		$isPlaying = data.is_playing
 		return {albumCover: currAlbumCover, title: currSongTitle, artist: currArtist, elapsedTime: currSongTime, duration: currSongDuration}
 	}
 
