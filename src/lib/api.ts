@@ -17,7 +17,6 @@ export const api = (access_token: string) => {
   }
   
   const getCurrentPlayback = async (): Promise<Record<string, any>> => {
-    console.log('getCurrentPlayback AT', access_token)
     const res = await fetch(url + '/currently-playing', params)
     const playback = await res.json()
     return playback  

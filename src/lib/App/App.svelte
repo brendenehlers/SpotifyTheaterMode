@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import memoize from 'memoize-one';
 	import FastAverageColor from 'fast-average-color'
 
@@ -22,10 +22,17 @@
 	let currSongTime: number
 	let currSongDuration: number
 
+	const updater = setInterval(async () => {
+		const data = await onGetCurrentPlayback()
+		loadDataIntoVairables(data)
+	}, 1000)
+
+	onDestroy(() => {
+		clearInterval(updater)
+	})
+
 	onMount(() => {
 		loadCurrentSongIntoApp()
-		// setInterval(() => getCurrentPlaybackStatus(), 1000)
-		// debugger
 	})
 
 	const loadDataIntoVairables = (data) => {
@@ -40,14 +47,13 @@
 
 	const loadCurrentSongIntoApp = async () => {
 		const data = await onGetCurrentPlayback()
-		console.log(data)
 		if($loggedIn) {
 			const { albumCover } = loadDataIntoVairables(data)
 			getAverageColor(albumCover)
 
 			// update the elapsed time every msInterval ms
 			const msInterval = 10
-			const songCounter = setInterval(() => {
+			const songCounter = setInterval(async () => {
 				if($isPlaying) currSongTime += msInterval
 
 				if(currSongTime >= currSongDuration) {
