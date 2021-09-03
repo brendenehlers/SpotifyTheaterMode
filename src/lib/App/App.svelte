@@ -36,7 +36,6 @@
 	})
 
 	const loadDataIntoVairables = (data) => {
-		console.log(data)
 		currAlbumCover = data.item.album.images[0].url
 		currSongTitle = data.item.name
 		currArtist = data.item.artists?.map(a => a.name) || []

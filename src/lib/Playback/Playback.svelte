@@ -28,7 +28,7 @@ export let onPause: Function
 .playback-bar {
   border-radius: 20px;
   width: 90%;
-  height: 50px;
+  /* height: 50px; */
   /* border: 1px solid white; */
 }
 </style>

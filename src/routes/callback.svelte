@@ -31,7 +31,6 @@
           d.setTime(d.getTime() + data.expires_in*1000)
           // put both tokens in one cookie
           document.cookie = `tokens=${data.access_token}${delimiter}${data.refresh_token}; expires=${d.toUTCString()}; path=/;`
-          // 
           setTimeout(() => refreshToken(data.refresh_token), data.expires_in * 999)
         }
       }

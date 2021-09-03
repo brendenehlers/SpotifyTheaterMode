@@ -67,44 +67,46 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-rows: 10px 100%;
   width: 100%;
-  height: auto;
 }
-
+.text {
+  font-size: 1.5rem;
+}
 .bar[value] {
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   border-radius: 10px;
 
   width: 100%;
   height: 100%;
 }
-
 .bar[value]::-webkit-progress-bar {
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset; */
   background-color: rgba(0,0,0,0.1);
 }
-
 .bar[value]::-webkit-progress-value {
   background-color: #ffffff;
   border-radius: 10px;
 }
-
-.timing { 
-  font-size: large;
+.bar[value]::-moz-progress-bar {
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+.bar {
+  background-color: rgba(0,0,0,0.3);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
+}
+.timing {
   font-weight: 400;
   width: auto;
 }
-
 .flex-container {
   display: grid;
-
-  grid-template-columns: 40% 5% 10% 5% 40%;
-  grid-template-areas: '. left pause right .';
-
-  height: 100%;
+  height: 100%; 
   width: 100%;
   align-items: center;
   justify-items: center;
@@ -116,11 +118,7 @@
   grid-area: pause;
   justify-content: center;
 }
-.pause-button:hover {
-  cursor: pointer;
-}
-.left {
-  
+.left { 
   grid-area: left;
   justify-content: right;
   right: 0;
@@ -130,7 +128,34 @@
   justify-items: left;
   left: 0;
 }
-.text {
-  font-size: 1.5rem;
+.pause-button:hover {
+  cursor: pointer;
+}
+@media screen and (min-width: 1080px) {
+  .container {
+    grid-template-rows: 10px 100%;
+    height: auto;
+  }
+  .timing { 
+    font-size: large;
+  }
+  .flex-container {
+    grid-template-columns: 40% 5% 10% 5% 40%;
+    grid-template-areas: '. left pause right .';
+  }
+}
+@media screen and (max-width: 1080px) {
+  .container {
+    grid-template-rows: 10px 100%;
+    height: auto;
+  }
+  .timing {
+    font-size: medium;
+  }
+  .flex-container {
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas: '. left pause right .';
+    width: inherit;
+  }
 }
 </style>
