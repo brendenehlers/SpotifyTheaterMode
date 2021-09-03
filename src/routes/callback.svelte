@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
 
-  import { client_id, client_secret } from '../store'
+  import { client_id, client_secret, redirect_uri } from '../store'
   import { delimiter } from '../constants'
 
   onMount(() => {
@@ -14,7 +14,7 @@
         const newParams = new URLSearchParams({
           grant_type: 'authorization_code',
           code,
-          redirect_uri: 'http://192.168.0.83:3000/callback'
+          redirect_uri: $redirect_uri
         })
         const params: RequestInit = {
           method: 'POST',
