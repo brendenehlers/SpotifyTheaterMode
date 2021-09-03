@@ -9,7 +9,7 @@
   import App from '../lib/App/App.svelte'
 
   const login = () => {
-    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=300,height=400,left=100,top=100`
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=500,height=800,left=100,top=100`
     const loginWin = window.open(`https://accounts.spotify.com/authorize?client_id=${$client_id}&response_type=${$response_type}&redirect_uri=${$redirect_uri}&scope=${$scope}`, '_blank', params)
     loginWin.onbeforeunload = () => {
       window.location.reload()
