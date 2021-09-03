@@ -12,8 +12,8 @@
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^3.0.0",
-    "@sveltejs/adapter-vercel": "^1.0.0-next.0",
-    "@sveltejs/kit": "next",
+    "@sveltejs/adapter-vercel": "^1.0.0-next.28",
+    "@sveltejs/kit": "^1.0.0-next.162",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
     "carbon-icons-svelte": "^10.36.0",
@@ -32,7 +32,6 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "fast-average-color": "^6.4.1",
-    "gh-pages": "^3.2.3",
     "memoize-one": "^5.2.1"
   }
 }
