@@ -79,6 +79,7 @@
   }
   .artist {
     justify-self: left;
+    align-self: flex-start;
     font-size: xx-large;
   }
 }

@@ -150,5 +150,4 @@
 .playback {
 	grid-area: playback;
 }
-
 </style>
